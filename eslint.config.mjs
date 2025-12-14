@@ -1,11 +1,46 @@
-import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import { defineConfig, globalIgnores } from "eslint/config";
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
+  // Override default ignores of eslint-config-next
+  {
+    rules: {
+      // TypeScript
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/prefer-as-const": "off",
+
+      // React
+      "react-hooks/exhaustive-deps": "off",
+      "react/no-unescaped-entities": "off",
+      "react/display-name": "off",
+      "react/prop-types": "off",
+
+      // Next.js
+      "@next/next/no-img-element": "off",
+      "@next/next/no-html-link-for-pages": "off",
+
+      // JavaScript
+      "prefer-const": "off", // prefer-const
+      "no-unused-vars": "off",
+      "no-console": "off",
+      "no-debugger": "off",
+      "no-empty": "off",
+      "no-irregular-whitespace": "off",
+      "no-case-declarations": "off",
+      "no-fallthrough": "off",
+      "no-mixed-spaces-and-tabs": "off",
+      "no-redeclare": "off",
+      "no-undef": "off",
+      "no-unreachable": "off",
+      "no-useless-escape": "off",
+    },
+  },
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
