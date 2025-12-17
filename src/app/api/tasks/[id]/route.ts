@@ -7,9 +7,9 @@ import { NextRequest, NextResponse } from "next/server";
 // PATCH - Update a task (status, priority, or full update)
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params:Promise<{ id: string }> }
 ) {
-  try {
+    try {
     const { id } = await params;
     const session = await getServerSession(authOptions);
     if (!session) {
@@ -99,7 +99,7 @@ export async function PATCH(
 // DELETE - Delete a task by ID
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params:Promise< { id: string }> }
 ) {
   try {
     const { id } = await params;
