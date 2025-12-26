@@ -18,7 +18,7 @@ import {
   TrendingUp,
   ArrowRight,
 } from "lucide-react";
-import { DashboardData, Project, Task, TASK_PRIORITY_COLORS, TASK_STATUS_LABELS } from "../../../../types";
+import { DashboardData, Project, Task, TASK_PRIORITY_COLORS, TASK_STATUS_LABELS } from "@/types";
 
 // ============================================
 // GET DASHBOARD DATA

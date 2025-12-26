@@ -16,7 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { CreateProjectInput, DEFAULT_PROJECT_COLORS } from "../../../types";
+import { CreateProjectInput, DEFAULT_PROJECT_COLORS } from "@/types";
 
 export default function CreateProjectButton() {
   const router = useRouter();
