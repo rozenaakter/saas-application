@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Loader2, Send, Sparkles, Bot, User } from "lucide-react";
 import { toast } from "sonner";
-import { ChatMessage } from "../../../../types";
+import { ChatMessage } from "@/types";
 
 export default function AIAssistantPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([
