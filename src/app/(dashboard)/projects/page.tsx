@@ -6,7 +6,7 @@ import { getDb } from "@/lib/db";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { Project } from "../../../../types";
+import { Project } from "@/types";
 import CreateProjectButton from "@/components/project/CreateProjectButton";
 import ProjectsList from "@/components/project/ProjectList";
 

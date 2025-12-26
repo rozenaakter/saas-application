@@ -18,26 +18,27 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { Project, Task } from "@/types";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 
-interface Task {
-  _id: string;
-  title: string;
-  description?: string;
-  status: "todo" | "in_progress" | "done";
-  priority: "low" | "medium" | "high";
-  projectId?: string;
-}
+// interface Task {
+//   _id: string;
+//   title: string;
+//   description?: string;
+//   status: "todo" | "in_progress" | "done";
+//   priority: "low" | "medium" | "high";
+//   projectId?: string;
+// }
 
-interface Project {
-  _id: string;
-  name: "Project Name";
-  color: "#3B82F6";
-  createdAt: "data";
-}
+// interface Project {
+//   _id: string;
+//   name: "Project Name";
+//   color: "#3B82F6";
+//   createdAt: "data";
+// }
 
 interface EditTaskDialogProps {
   task: Task;

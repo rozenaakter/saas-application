@@ -6,7 +6,7 @@ import { getDb } from "@/lib/db";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { ApiResponse, CreateProjectInput } from "../../../../types";
+import { ApiResponse, CreateProjectInput } from "@/types";
 
 // ============================================
 // POST - Create Project

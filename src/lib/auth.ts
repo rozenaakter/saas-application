@@ -1,12 +1,11 @@
 // lib/auth.ts
-// NextAuth Configuration with TypeScript fix
+// NextAuth Configuration - COMPLETE FIXED VERSION
 
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import { AuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
-import { getDb } from "./db";
-// import { getDb } from '@/lib/db';
+import clientPromise from "./mongodb";
 
 // ✅ TypeScript Module Augmentation
 declare module "next-auth" {
@@ -31,7 +30,7 @@ declare module "next-auth/jwt" {
 }
 
 export const authOptions: AuthOptions = {
-  adapter: MongoDBAdapter(getDb),
+  adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,

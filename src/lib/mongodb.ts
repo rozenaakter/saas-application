@@ -74,3 +74,27 @@ export async function getMongoDBService(): Promise<MongoDBService> {
   const { db } = await connectToDatabase();
   return new MongoDBService(db);
 }
+
+// ============================================
+// NextAuth Adapter এর জন্য clientPromise
+// ============================================
+let clientPromise: Promise<MongoClient>;
+
+if (process.env.NODE_ENV === "development") {
+  // Development mode: global variable use করে connection preserve করা
+  let globalWithMongo = global as typeof globalThis & {
+    _mongoClientPromise?: Promise<MongoClient>;
+  };
+
+  if (!globalWithMongo._mongoClientPromise) {
+    const client = new MongoClient(MONGODB_URI);
+    globalWithMongo._mongoClientPromise = client.connect();
+  }
+  clientPromise = globalWithMongo._mongoClientPromise;
+} else {
+  // Production mode: নতুন client তৈরি করা
+  const client = new MongoClient(MONGODB_URI);
+  clientPromise = client.connect();
+}
+
+export default clientPromise;

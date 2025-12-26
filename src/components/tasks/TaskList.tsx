@@ -1,4 +1,3 @@
-// components/tasks/TaskList.tsx - IMPROVED VERSION
 "use client";
 
 import { Badge } from "@/components/ui/badge";
@@ -28,28 +27,29 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import EditTaskDialog from "./EditTaskDialog";
+import { Project, Task } from "@/types";
 
-interface Task {
-  _id: string;
-  title: string;
-  description?: string;
-  status: "todo" | "in_progress" | "done";
-  priority: "low" | "medium" | "high";
-  projectId?: string;
-  createdAt: string;
-  aiSuggestions?: {
-    subtasks: string[];
-    priority: string;
-    timeEstimate: number;
-    tips?: string[];
-  };
-}
+// interface Task {
+//   _id: string;
+//   title: string;
+//   description?: string;
+//   status: "todo" | "in_progress" | "done";
+//   priority: "low" | "medium" | "high";
+//   projectId?: string;
+//   createdAt: string;
+//   aiSuggestions?: {
+//     subtasks: string[];
+//     priority: string;
+//     timeEstimate: number;
+//     tips?: string[];
+//   };
+// }
 
-interface Project {
-  _id: string;
-  name: string;
-  color: string;
-}
+// interface Project {
+//   _id: string;
+//   name: string;
+//   color: string;
+// }
 
 interface TaskListProps {
   tasks: Task[];

@@ -30,7 +30,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { toast } from "sonner";
-import { ProjectsListProps } from "../../../types";
+import { ProjectsListProps } from "@/types";
 
 export default function ProjectsList({ projects }: ProjectsListProps) {
   const router = useRouter();
